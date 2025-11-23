@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --breakpoint-middle-res: 1024px;
+}
+
+html {
+  overflow: auto !important;
+  padding: 0 !important;
+}
+
+body {
+  overflow: auto !important;
+  font-family: var(--font-aptos) !important;
+}
+
+nav .active {
+  border: 1px solid #43E1A9;
+  border-radius: 11px;
+  background: rgb(67 225 169 / 6%);
+}
+
+body:has(.home-page) {
+  background-image: url('/images/home-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: color-dodge;
+  background-position: top center;
+  background-attachment: fixed;
+  background-color: #00281A;
+}
+
+body:has(.authScreens) {
+  background-color: white;
+  font-family: var(--font-aptos);
+}
+
+body:has(.dashboard) {
+  background-color: white;
+  font-family: var(--font-aptos);
+}
+
+.customFixed {
+  position: fixed;
+  top: 0;
+  margin: 0 auto;
+  left: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.font-belanosima {
+  font-family: var(--font-belanosima);
+}
+
+.font-aptos {
+  font-family: var(--font-aptos);
+}
+
+/* Custom square control to match figma for both checkbox and radio */
+/* Checkbox */
+.chk-green {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+  border: 2px solid #97C1A9;
+  background: #fff;
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+}
+.chk-green:focus-visible {
+  outline: 2px solid #97C1A9;
+  outline-offset: 2px;
+}
+.chk-green:checked {
+  background-color: #97C1A9;
+  border-color: #97C1A9;
+}
+.chk-green::after {
+  content: "";
+  width: 6px;
+  height: 10px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(45deg) scale(0);
+  transition: transform 120ms ease-in-out;
+}
+.chk-green:checked::after {
+  transform: rotate(45deg) scale(1);
+}
+
+/* Radio with the same square visual */
+.radio-square-green {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+  border: 2px solid #97C1A9;
+  background: #fff;
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+}
+.radio-square-green:focus-visible {
+  outline: 2px solid #97C1A9;
+  outline-offset: 2px;
+}
+.radio-square-green:checked {
+  background-color: #97C1A9;
+  border-color: #97C1A9;
+}
+.radio-square-green::after {
+  content: "";
+  width: 6px;
+  height: 10px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(45deg) scale(0);
+  transition: transform 120ms ease-in-out;
+}
+.radio-square-green:checked::after {
+  transform: rotate(45deg) scale(1);
+}
+
+/* Toggle switch (for High contrast mode) */
+.toggle-green {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  width: 48px;
+  height: 26px;
+  border-radius: 9999px;
+  background: #f3f4f6; /* light gray off */
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.toggle-green::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transform: translate(0, -50%);
+  transition: transform 150ms ease;
+}
+.toggle-green:checked {
+  background: #97C1A9;
+}
+.toggle-green:checked::after {
+  transform: translate(20px, -50%);
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+
+
+/* --- Sticky Fix --- */
+html, body, #__next {
+  overflow: visible !important;
+  height: auto !important;
+  position: static !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #ffffff inset !important; 
+  -webkit-text-fill-color: #848884 !important;
+}
+
+.authScreens input {
+  min-height: 54px;
+}
